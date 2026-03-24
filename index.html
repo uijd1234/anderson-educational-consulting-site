@@ -1,500 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anderson Educational Consulting LLC</title>
-  <meta
-    name="description"
-    content="Student Discipline and Title IX Advisory for families and schools."
-  />
-  <style>
-    :root {
-      --navy: #10233f;
-      --navy-2: #18365f;
-      --gold: #caa24a;
-      --bg: #f7f8fb;
-      --text: #1f2937;
-      --muted: #5b6472;
-      --line: #e5e7eb;
-      --white: #ffffff;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anderson Educational Consulting LLC</title>
 
-    * {
-      box-sizing: border-box;
-    }
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #1f2937;
+  line-height: 1.6;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+header {
+  background: linear-gradient(to right, #0f172a, #1e293b);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
 
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+h1 {
+  margin: 0;
+  font-size: 42px;
+}
 
-    .wrap {
-      width: min(1100px, calc(100% - 32px));
-      margin: 0 auto;
-    }
+h2 {
+  color: #0f172a;
+}
 
-    .topbar {
-      background: var(--white);
-      border-bottom: 1px solid var(--line);
-    }
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
 
-    .topbar .wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 0;
-      gap: 16px;
-    }
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
 
-    .brand {
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      color: var(--navy);
-      text-transform: uppercase;
-    }
+.card {
+  border: 1px solid #e5e7eb;
+  padding: 25px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
 
-    .brand-sub {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.88rem;
-      color: var(--gold);
-      font-weight: 700;
-    }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
 
-    .hero {
-      background:
-        linear-gradient(rgba(16, 35, 63, 0.88), rgba(16, 35, 63, 0.92)),
-        linear-gradient(135deg, #1a3660, #10233f);
-      color: var(--white);
-      padding: 80px 0 72px;
-    }
+.footer {
+  background: #f3f4f6;
+  padding: 40px;
+  text-align: center;
+}
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 0.9fr;
-      gap: 36px;
-      align-items: center;
-    }
+.button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 24px;
+  background: #f59e0b;
+  color: black;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
 
-    .eyebrow {
-      display: inline-block;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #e6d09a;
-      margin-bottom: 16px;
-      font-weight: 700;
-    }
-
-    h1 {
-      margin: 0 0 18px;
-      font-size: clamp(2.2rem, 4vw, 3.6rem);
-      line-height: 1.12;
-      font-weight: 700;
-    }
-
-    .hero p {
-      margin: 0 0 18px;
-      font-size: 1.08rem;
-      color: #e9edf3;
-      max-width: 700px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 26px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 13px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      transition: 0.2s ease;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: #1b1b1b;
-    }
-
-    .btn-primary:hover {
-      opacity: 0.92;
-    }
-
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.35);
-      color: var(--white);
-      background: transparent;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.08);
-    }
-
-    .hero-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 16px;
-      padding: 28px;
-      backdrop-filter: blur(4px);
-    }
-
-    .hero-card h3 {
-      margin: 0 0 12px;
-      font-size: 1.25rem;
-      color: #fff;
-    }
-
-    .hero-card ul {
-      margin: 0;
-      padding-left: 18px;
-      color: #eef2f7;
-    }
-
-    .hero-card li + li {
-      margin-top: 8px;
-    }
-
-    section {
-      padding: 68px 0;
-    }
-
-    .section-head {
-      max-width: 760px;
-      margin-bottom: 28px;
-    }
-
-    .section-label {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      margin: 0 0 12px;
-      font-size: clamp(1.9rem, 3vw, 2.6rem);
-      line-height: 1.15;
-      color: var(--navy);
-    }
-
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1rem;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 24px;
-      box-shadow: 0 8px 28px rgba(16, 35, 63, 0.05);
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      color: var(--navy);
-      font-size: 1.2rem;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .panel {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 26px;
-      box-shadow: 0 8px 28px rgba(16, 35, 63, 0.05);
-    }
-
-    .panel p,
-    .panel li {
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .panel ul {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    .panel li + li {
-      margin-top: 10px;
-    }
-
-    .band {
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    .band h2,
-    .band .section-label {
-      color: var(--white);
-    }
-
-    .band .section-label {
-      color: #e6d09a;
-    }
-
-    .band p,
-    .band li {
-      color: #e7edf5;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .contact-box {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 28px;
-      box-shadow: 0 8px 28px rgba(16, 35, 63, 0.05);
-    }
-
-    .contact-box p {
-      margin: 0 0 10px;
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1rem;
-    }
-
-    .contact-box a {
-      color: var(--navy-2);
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    footer {
-      background: #eef1f5;
-      border-top: 1px solid var(--line);
-      padding: 24px 0;
-    }
-
-    footer p {
-      margin: 0;
-      text-align: center;
-      color: #6b7280;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 860px) {
-      .hero-grid,
-      .cards,
-      .split {
-        grid-template-columns: 1fr;
-      }
-
-      .topbar .wrap {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero {
-        padding: 64px 0 56px;
-      }
-
-      section {
-        padding: 54px 0;
-      }
-    }
-  </style>
+.subtext {
+  max-width: 600px;
+  margin: 20px auto;
+  opacity: 0.9;
+}
+</style>
 </head>
+
 <body>
-  <div class="topbar">
-    <div class="wrap">
-      <div>
-        <div class="brand">Anderson Educational Consulting LLC</div>
-        <div class="brand-sub">Student Discipline &amp; Title IX Advisory</div>
-      </div>
-    </div>
-  </div>
 
-  <header class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="eyebrow">Families • Schools • High-Stakes Guidance</div>
-        <h1>Clear, experienced support in student discipline and Title IX matters.</h1>
-        <p>
-          Anderson Educational Consulting LLC provides steady, informed guidance
-          for families and school systems navigating complex educational situations
-          where fairness, process, and sound judgment matter.
-        </p>
-        <p>
-          Whether you are a family facing a difficult disciplinary issue or a
-          school leader seeking trusted advisory support, the goal is the same:
-          clarity, consistency, and confidence in the path forward.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:jd@andersoneducationalconsulting.com">Request a Consultation</a>
-          <a class="btn btn-secondary" href="#services">View Services</a>
-        </div>
-      </div>
+<header>
+<h1>Anderson Educational Consulting LLC</h1>
+<p><strong>Student Discipline & Title IX Advocacy</strong></p>
+<p class="subtext">
+Clear, experienced guidance when the stakes are high — helping families and schools navigate complex situations with confidence.
+</p>
+<a class="button" href="mailto:jd@andersoneducationalconsulting.com">Request Consultation</a>
+</header>
 
-      <div class="hero-card">
-        <h3>Areas of Focus</h3>
-        <ul>
-          <li>Student discipline hearings, suspension, and expulsion matters</li>
-          <li>Title IX process guidance and case support</li>
-          <li>Family advocacy and preparation for high-stakes meetings</li>
-          <li>School system advisory support on process, compliance, and fairness</li>
-        </ul>
-      </div>
-    </div>
-  </header>
+<div class="section">
+<h2>How I Help</h2>
+<div class="services">
 
-  <section id="services">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="section-label">Services</div>
-        <h2>Practical support for moments that carry real consequences</h2>
-        <p>
-          This practice is intentionally balanced to support both families and school systems
-          with thoughtful, professional guidance.
-        </p>
-      </div>
+<div class="card">
+<h3>Student Discipline Advocacy</h3>
+<p>Representation and guidance for suspensions, expulsions, and disciplinary hearings.</p>
+</div>
 
-      <div class="cards">
-        <div class="card">
-          <h3>Student Discipline Advisory</h3>
-          <p>
-            Guidance for suspensions, expulsions, hearings, and related school discipline matters
-            requiring careful preparation and sound process.
-          </p>
-        </div>
+<div class="card">
+<h3>Title IX Support</h3>
+<p>Strategic support through investigations, allegations, and formal processes.</p>
+</div>
 
-        <div class="card">
-          <h3>Title IX Advisory</h3>
-          <p>
-            Support in understanding Title IX procedures, expectations, and the practical issues
-            that arise in sensitive, high-stakes cases.
-          </p>
-        </div>
+<div class="card">
+<h3>Family Advocacy</h3>
+<p>Helping families understand their rights and prepare effectively for high-stakes situations.</p>
+</div>
 
-        <div class="card">
-          <h3>Family Advocacy</h3>
-          <p>
-            Help for families seeking clarity, preparation, and informed support as they navigate
-            disciplinary and Title IX concerns affecting their child.
-          </p>
-        </div>
+<div class="card">
+<h3>School Consulting</h3>
+<p>Advising schools on compliance, fairness, and best practices.</p>
+</div>
 
-        <div class="card">
-          <h3>School System Consulting</h3>
-          <p>
-            Advisory support for school leaders seeking fair, consistent, and defensible
-            approaches to student matters, investigations, and decision-making.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+</div>
+</div>
 
-  <section>
-    <div class="wrap split">
-      <div class="panel">
-        <div class="section-label">About</div>
-        <h2>Trusted guidance rooted in experience</h2>
-        <p>
-          Most families do not realize how high the stakes are in student discipline and
-          Title IX cases until they are in the middle of one.
-        </p>
-        <p>
-          Anderson Educational Consulting LLC was created to provide informed, steady
-          guidance for families while also helping school systems strengthen fair,
-          consistent, and sound practices.
-        </p>
-        <p>
-          The goal is simple: help families feel supported and informed, and help schools
-          operate with integrity, consistency, and care.
-        </p>
-      </div>
+<div class="section">
+<h2>Why This Matters</h2>
+<p>
+Student discipline and Title IX cases can have lasting academic, legal, and personal consequences. 
+With over two decades of experience in school systems, I provide clear, steady guidance when it matters most.
+</p>
+</div>
 
-      <div class="panel">
-        <div class="section-label">Focus</div>
-        <h2>Core strengths</h2>
-        <ul>
-          <li>Student discipline hearings and case preparation</li>
-          <li>Title IX process support</li>
-          <li>Family-facing advisory guidance</li>
-          <li>Administrative and school division consulting</li>
-          <li>Fairness, consistency, and defensible process</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+<div class="section">
+<h2>Contact</h2>
+<p><strong>Email:</strong> jd@andersoneducationalconsulting.com</p>
+<p><strong>Phone:</strong> 703-470-7239</p>
+</div>
 
-  <section class="band">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="section-label">Approach</div>
-        <h2>Calm, professional, and balanced</h2>
-        <p>
-          High-stakes educational situations demand more than opinions. They require
-          thoughtful guidance, clear communication, and an approach grounded in fairness
-          and sound practice.
-        </p>
-      </div>
-    </div>
-  </section>
+<div class="footer">
+<p>© Anderson Educational Consulting LLC</p>
+</div>
 
-  <section id="contact">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="section-label">Contact</div>
-        <h2>Ready to talk through your situation?</h2>
-        <p>
-          Reach out to discuss how Anderson Educational Consulting LLC may be able to help.
-        </p>
-      </div>
-
-      <div class="contact-box">
-        <p><strong>Email:</strong> <a href="mailto:jd@andersoneducationalconsulting.com">jd@andersoneducationalconsulting.com</a></p>
-        <p><strong>Phone:</strong> <a href="tel:7034707239">703-470-7239</a></p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="wrap">
-      <p>© Anderson Educational Consulting LLC. All rights reserved.</p>
-    </div>
-  </footer>
 </body>
 </html>
