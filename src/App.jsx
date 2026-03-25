@@ -1,4 +1,4 @@
-import React from "react";
+// no import needed
 
 const services = [
   {
